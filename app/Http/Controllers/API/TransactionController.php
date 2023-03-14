@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Exception;
+use Midtrans\Config;
 use App\Models\transaction;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseFormatter;
@@ -28,7 +29,7 @@ class TransactionController extends Controller
             }
         }
 
-        $transaction = transaction::with(['food','user'])->where('user_id',Auth::user()->id)
+        $transaction = transaction::with(['food','user'])->where('user_id',Auth::user()->id);
         if ($food_id) {
             $food_id->where('food_id', $food_id);
         }
@@ -40,7 +41,7 @@ class TransactionController extends Controller
             $transaction->paginate($limit), 'Data list transaction berhasil diambil');
     }
 
-    public function update($request $request,$id)
+    public function update(Request $request,$id)
     {
         $transaction = transaction::findOrdFails($id);
 
@@ -66,12 +67,12 @@ class TransactionController extends Controller
             'total'=> $request->total,
             'status'=> $request->status,
             'payment_url' => '',
-        ])
+        ]);
 
         //konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
         Config::$clientKey = config('services.midtrans.clientKey');
-        Config::$isProduction    = config('services.midtrans.isProduction');
+        Config::$isProduction = config('services.midtrans.isProduction');
         Config::$isSanitized = config('services.midtrans.isSanitized');
         Config::$is3ds = config('services.midtrans.is3ds');
 
@@ -103,7 +104,7 @@ class TransactionController extends Controller
             //mengembalikan data ke API
             return ResponseFormatter::success($transaction,'Transaksi berhasil');
         } catch (Exception $e) {
-            return ResponseFormatter:error($e->getMessage(),'Transaksi gagal')
+            return ResponseFormatter::error($e->getMessage(),'Transaksi gagal');
         }
     }
 }
