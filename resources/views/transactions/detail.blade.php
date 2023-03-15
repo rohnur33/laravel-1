@@ -69,16 +69,16 @@
                     </div>
                     <div class="w-1/6">
                         <div class="text-sm mb-1">Change Status</div>
-                        <a href="{{ route('transaction.changeStatus', ['id' => $item->id,'status' => 'ON_DELIVERY']) }}"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
+                        <a href="#"
+                            class="bg-blue-500 hover:bg-blue-700 text-black font-bold px-2 rounded block text-center w-full mb-1">
                             On Delivery
                         </a>
-                        <a href="{{ route('transcation.changeStatus',['id' => $item->id,'status' =>'DELIVERED']) }}" 
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
+                        <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'DELIVERED']) }}" 
+                            class="bg-green-500 hover:bg-green-700 text-black font-bold px-2 rounded block text-center w-full mb-1">
                             Delivered
                         </a>
-                        <a href="{{ rotue('transaction.changeStatus',['id' => $item->id,'status' => 'CENCELED']) }}"
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
+                        <a href="#"
+                            class="bg-green-500 hover:bg-green-700 text-black font-bold px-2 rounded block text-center w-full mb-1">
                             Cencelled
                         </a>
                     </div>                    

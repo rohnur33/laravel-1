@@ -40,7 +40,7 @@ class TransactionController extends Controller
      */
     public function show(transaction $transaction)
     {
-        return view('transaction.detail',[
+        return view('transactions.detail',[
             'item' => $transaction
         ]);
     }
@@ -64,9 +64,10 @@ class TransactionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(transaction $transaction)
     {
-        //
+        $transaction->delete();
+        return redirect()->route('transaction.index');
     }
     public function changeStatus(Request $request,$id,$status)
     {
@@ -75,6 +76,6 @@ class TransactionController extends Controller
         $transaction->status = $status;
         $transaction->save();
 
-        return redirect()->route('transaction.show',$id);
+        return redirect()->route('transactions.show',$id);
     }
 }
