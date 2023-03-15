@@ -12,7 +12,7 @@
     <div>
         <div class="flex items-center">            
             <h2 class="ml-3 text-xl font-semibold text-gray-900">
-                <a href="https://laravel.com/docs">Food</a>
+                <a href="dashboard/food">Food</a>
             </h2>
         </div>
 
@@ -28,7 +28,7 @@
     <div>
         <div class="flex items-center">
             <h2 class="ml-3 text-xl font-semibold text-gray-900">
-                <a href="https://laracasts.com">Transaksi</a>
+                <a href="dashboard/transaction">Transaksi</a>
             </h2>
         </div>
     </div>
@@ -36,7 +36,7 @@
     <div>
         <div class="flex items-center">
             <h2 class="ml-3 text-xl font-semibold text-gray-900">
-                <a href="https://tailwindcss.com/">User</a>
+                <a href="dashboard/users">User</a>
             </h2>
         </div>
 
@@ -46,7 +46,7 @@
     <div>
         <div class="flex items-center">
             <h2 class="ml-3 text-xl font-semibold text-gray-900">
-                <a href="https://tailwindcss.com/">Profil</a>
+                <a href="dashboard/profile">Profil</a>
             </h2>
         </div>
 
