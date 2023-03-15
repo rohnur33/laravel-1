@@ -68,4 +68,13 @@ class TransactionController extends Controller
     {
         //
     }
+    public function changeStatus(Request $request,$id,$status)
+    {
+        $transaction = transaction::findOrFail($id);
+
+        $transaction->status = $status;
+        $transaction->save();
+
+        return redirect()->route('transaction.show',$id);
+    }
 }
