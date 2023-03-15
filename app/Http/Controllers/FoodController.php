@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\food;
 use Illuminate\Http\Request;
+use App\Http\Requests\FoodRequest;
 
 class FoodController extends Controller
 {
@@ -30,7 +31,7 @@ class FoodController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(FoodRequest $request)
     {
         $data = $request->all();
 
@@ -62,12 +63,12 @@ class FoodController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, food $food)
+    public function update(FoodRequest $request, food $food)
     {
         $data = $request->all();
 
         if ($request->file(picturePath)) {
-            $data['picturePath'] = $request->file('picturePath')->store('assets/food','public');
+            $data['picturespath'] = $request->file('picturespath')->store('assets/food','public');
         }
 
         $food->update($data);
