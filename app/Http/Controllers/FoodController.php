@@ -24,7 +24,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('food.create');
     }
 
     /**
@@ -32,7 +32,13 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['picturePath'] = $request->file('picturePath')->store('assets/food','public');
+
+        food::create($data);
+
+        return redirect()->route('food.index');
     }
 
     /**
@@ -48,7 +54,9 @@ class FoodController extends Controller
      */
     public function edit(food $food)
     {
-        //
+        return view('food.edit',[
+            'item' => $food
+        ]);
     }
 
     /**
@@ -56,7 +64,14 @@ class FoodController extends Controller
      */
     public function update(Request $request, food $food)
     {
-        //
+        $data = $request->all();
+
+        if ($request->file(picturePath)) {
+            $data['picturePath'] = $request->file('picturePath')->store('assets/food','public');
+        }
+
+        $food->update($data);
+        return redirect()->route('food.index');
     }
 
     /**
