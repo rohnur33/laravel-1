@@ -73,7 +73,7 @@
                             class="bg-blue-500 hover:bg-blue-700 text-black font-bold px-2 rounded block text-center w-full mb-1">
                             On Delivery
                         </a>
-                        <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'DELIVERED']) }}" 
+                        <a href="#" 
                             class="bg-green-500 hover:bg-green-700 text-black font-bold px-2 rounded block text-center w-full mb-1">
                             Delivered
                         </a>
