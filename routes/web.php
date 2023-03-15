@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\API\MidtransController;
 
 /*
@@ -30,6 +31,7 @@ Route::prefix('dashboard')
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('food', FoodController::class);
     Route::resource('users', UserController::class);
+    Route::resource('transaction', TransactionController::class);
  });
 
 
