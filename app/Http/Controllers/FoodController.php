@@ -67,12 +67,13 @@ class FoodController extends Controller
     {
         $data = $request->all();
 
-        if ($request->file(picturespath)) {
-            $data['picturespath'] = $request->file('picturespath')->store('assets/food','public');
-
+        if($request->file('picturespath'))
+        {
+            $data['picturespath'] = $request->file('picturespath')->store('assets/food', 'public');
         }
 
         $food->update($data);
+
         return redirect()->route('food.index');
     }
 
