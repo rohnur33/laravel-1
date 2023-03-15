@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         $data = $request->all();
 
-        //$data['picturepath'] = $request->file('picturepath')->store('assets/user', 'public');
+        $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/user', 'public');
 
         User::create($data);
 
@@ -84,9 +84,9 @@ class UserController extends Controller
     {
         $data = $request->all();
 
-        if($request->file('picturePath'))
+        if($request->file('profile_photo_path'))
         {
-            $data['picturePath'] = $request->file('picturePath')->store('assets/user', 'public');
+            $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/user', 'public');
         }
 
         $user->update($data);
