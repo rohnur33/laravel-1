@@ -64,6 +64,8 @@ class FoodController extends Controller
      */
     public function destroy(food $food)
     {
-        //
+        $food->delete();
+
+        return redirect()->route('food.index');
     }
 }
