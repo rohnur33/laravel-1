@@ -19,6 +19,8 @@
                 <thead>
                     <tr>
                         <th class="border px-6 py-4">ID</th>
+                        <th class="border px-6 py-4">description</th>
+                        <th class="border px-6 py-4">ingredients</th>
                         <th class="border px-6 py-4">NAME</th>
                         <th class="border px-6 py-4">Price</th>
                         <th class="border px-6 py-4">Rate</th>
