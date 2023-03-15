@@ -22,7 +22,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="/dashboard/transaksi" :active="request()->routeIs('dashboard/transaksi')">
+                    <x-nav-link href="/dashboard/transaction" :active="request()->routeIs('dashboard/transaction')">
                         {{ __('Transaksi') }}
                     </x-nav-link>
                 </div>

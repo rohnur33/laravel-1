@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -13,7 +14,7 @@ class TransactionController extends Controller
     {
         $transaction = transaction::with(['food','user'])->paginate(10);
 
-        return view('transaction.index',[
+        return view('transactions.index',[
             'transaction' => $transaction
         ]);
     }

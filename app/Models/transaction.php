@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class transaction extends Model
 {
-    use HasFactory,SpftDeletes;
+    use HasFactory,SoftDeletes;
 
     protected $fillable = [
         'user_id','food_id','qyt','total','status','payment_url'
