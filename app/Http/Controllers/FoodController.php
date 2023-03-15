@@ -34,7 +34,7 @@ class FoodController extends Controller
     {
         $data = $request->all();
 
-        $data['picturePath'] = $request->file('picturePath')->store('assets/food','public');
+        $data['picturespath'] = $request->file('picturespath')->store('assets/food','public');
 
         food::create($data);
 
